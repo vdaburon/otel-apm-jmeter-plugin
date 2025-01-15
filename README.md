@@ -102,7 +102,7 @@ e.g. action = REMOVE :
 </pre>
 
 ## Tool installed with jmeter-plugins-manager
-This tool could be installed with the jmeter-plugins-manager from jmeter.plugins.org.<br>
+This tool could be installed with the jmeter-plugins-manager from https://jmeter-plugins.org/<br>
 The tool name is : "vdn@github - otel-apm-tool"
 
 ## Usage Maven
