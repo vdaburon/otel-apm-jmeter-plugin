@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/vdaburon/elastic-otel-jmeter-plugin/blob/main/doc/otelapmjmplugin_logo.png" alt="otel elastic apm jmeter logo"/>
+<img src="https://github.com/vdaburon/otel-apm-jmeter-plugin/blob/main/doc/otelapmjmplugin_logo.png" alt="otel elastic apm jmeter logo"/>
 
   <p align="center">Apache JMeter tool plugin to Manage the integration of OpenTelemetry from Elastic Application Performance Monitoring in a JMeter script.</p>
   <p align="center"><a href="https://github.com/vdaburon/otel-apm-jmeter-plugin">Link to github project otel-apm-jmeter-plugin</a></p>
