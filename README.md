@@ -6,6 +6,11 @@
 </p>
 
 # Apache JMeter tool plugin to manage the OpenTelemetry Elastic Application Performance Monitoring (OTEL ELASTIC APM) in JMeter script
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.vdaburon/otel-apm-jmeter-plugin)](https://central.sonatype.com/artifact/io.github.vdaburon/otel-apm-jmeter-plugin)
+[![Apache License](http://img.shields.io/badge/license-Apache-green.svg)](https://github.com/vdaburon/CreateHtmlForFilesInDirectory/blob/main/LICENSE)
+![Free](https://img.shields.io/badge/free-open--source-green.svg)
+[![Apache JMeter](https://img.shields.io/badge/Apache%20JMeter-green)](https://jmeter.apache.org/)
+
 
 ## GUI interface in the JMeter Tools Menu
 This tool is present in the Menu Tools > vdn@github - OTEL ELASTIC APM Integration Tool
@@ -106,13 +111,17 @@ This tool could be installed with the jmeter-plugins-manager from https://jmeter
 The tool name is : "vdn@github - otel-apm-tool"
 
 ## Usage Maven
-The maven groupId, artifactId and version, this plugin is in the **Maven Central Repository** [![Maven Central elastic-apm-jmeter-plugin](https://maven-badges.herokuapp.com/maven-central/io.github.vdaburon/otel-apm-jmeter-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.vdaburon/otel-apm-jmeter-plugin)
+The maven groupId, artifactId and version, this plugin is in the **Maven Central Repository** [![Maven Central](https://img.shields.io/maven-central/v/io.github.vdaburon/otel-apm-jmeter-plugin)](https://central.sonatype.com/artifact/io.github.vdaburon/otel-apm-jmeter-plugin)
 
 ```xml
 <groupId>io.github.vdaburon</groupId>
 <artifactId>otel-apm-jmeter-plugin</artifactId>
-<version>1.0</version>
+<version>1.2</version>
 ```
 ## Versions
+Version 1.2 2026-04-16, Use library jmeter-otel-apm v1.2 (before v1.1), test with elastic-otel-javaagent-1.10.0.jar. Readme : update badge links. Update Maven Plugins in pom.xml: commons-cli v1.11.0, maven-compiler-plugin v3.12.1, maven-assembly-plugin v3.8.0, maven-gpg-plugin v3.2.8, central-publishing-maven-plugin v0.10.0.
+
+Version 1.1 2025-09-15, Use library jmeter-otel-apm v1.1 (before v1.0), test with elastic-otel-javaagent-1.5.0.jar (before 1.1.0).
+
 version 1.0  2025-01-15, First release
 

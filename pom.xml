@@ -6,7 +6,7 @@
 
     <groupId>io.github.vdaburon</groupId>
     <artifactId>otel-apm-jmeter-plugin</artifactId>
-    <version>1.0</version>
+    <version>1.2</version>
     <packaging>jar</packaging>
 
     <name>Apache JMeter Plugin to integrate OTEL ELASTIC APM in a JMeter script</name>
@@ -44,16 +44,6 @@
         <url>https://github.com/vdaburon/otel-apm-jmeter-plugin</url>
         <tag>HEAD</tag>
     </scm>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -83,7 +73,7 @@
         <dependency>
             <groupId>io.github.vdaburon</groupId>
             <artifactId>jmeter-otel-apm</artifactId>
-            <version>1.0</version>
+            <version>1.2</version>
         </dependency>
     </dependencies>
 
@@ -102,7 +92,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>3.12.0</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -129,7 +119,7 @@
                 <!-- create the uber jar : mvn clean package -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.6.0</version>
+                <version>3.8.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -154,7 +144,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.2.8</version>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
@@ -165,19 +155,21 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <!-- deploy jar in maven central or stagging only : mvn clean deploy
-                 if autoReleaseAfterClose == true then release in maven central;
-                 if autoReleaseAfterClose == false then release in stagging only not maven central
+                    if autoReleaseAfterClose == true then release in maven central;
+                    if autoReleaseAfterClose == false then release in stagging only not maven central
                 -->
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.7.0</version>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.10.0</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>${mavenCentralAutoReleaseAfterClose}</autoReleaseAfterClose>
+                    <publishingServerId>central_publishing</publishingServerId>
+                    <centralBaseUrl>https://central.sonatype.com</centralBaseUrl>
+                    <waitUntil>published</waitUntil>
+                    <autoPublish>${mavenCentralAutoReleaseAfterClose}</autoPublish>
                 </configuration>
             </plugin>
         </plugins>
